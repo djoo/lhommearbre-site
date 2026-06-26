@@ -13,6 +13,7 @@
 <meta property="og:image:height" content="1500">
 <meta property="og:url" content="https://lhommearbre.com/">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="book">
 <meta property="og:site_name" content="L'Homme-Arbre ou Le Rêve de Saraca">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="L'Homme-Arbre ou Le Rêve de Saraca">
@@ -30,12 +31,12 @@
   ],
   "inLanguage": "fr",
   "genre": "Roman d'anticipation",
-  "datePublished": "2026",
+  "numberOfPages": 210,
+  "datePublished": "2026-01-03",
   "image": "https://lhommearbre.com/assets/cover.jpg",
   "url": "https://lhommearbre.com/",
-  "publisher": { "@type": "Organization", "name": "Hachette" },
-  "description": "Roman d'anticipation de Franck Tonnellier et Léonard Vicari. An 6019 : l'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques, et l'arbre-monde prend la parole. Une épopée entre science-fiction et fantastique. Distribution Hachette.",
-  "offers": { "@type": "Offer", "url": "https://amzn.to/49hRZjS", "availability": "https://schema.org/InStock" }
+  "description": "Roman d'anticipation de Franck Tonnellier et Léonard Vicari. En l'an 6019, l'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques, et l'arbre-monde prend la parole. Une épopée entre science-fiction et fantastique, un voyage initiatique sur notre véritable place sur cette planète. Distribution Hachette.",
+  "offers": { "@type": "Offer", "url": "https://amzn.to/49hRZjS", "priceCurrency": "EUR", "price": "9.99", "availability": "https://schema.org/InStock" }
 }
 </script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
@@ -59,13 +60,30 @@
     font-size:19px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
-    display:flex;
+  }
+  .cta{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-family:"EB Garamond",serif;
+    font-size:18px;
+    letter-spacing:.03em;
+    padding:13px 30px;
+    border-radius:2px;
+    transition:background .2s ease;
+  }
+  .cta:hover{background:var(--accent-dark)}
+
+  /* HERO */
+  .hero{
     min-height:100vh;
+    display:flex;
     align-items:center;
     justify-content:center;
-    padding:48px 24px;
+    padding:56px 24px;
   }
-  main{
+  .hero-inner{
     max-width:920px;
     width:100%;
     display:grid;
@@ -82,114 +100,126 @@
     box-shadow:0 18px 50px -24px rgba(0,0,0,.35);
     display:block;
   }
-  .eyebrow{
-    font-family:"EB Garamond",serif;
-    font-style:italic;
-    color:var(--muted);
-    font-size:18px;
-    letter-spacing:.02em;
+  .eyebrow{font-style:italic;color:var(--muted);font-size:18px;letter-spacing:.02em;margin-bottom:14px}
+  h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:54px;line-height:1.04;letter-spacing:.01em}
+  .subtitle{font-family:"Cormorant Garamond",serif;font-weight:400;font-style:italic;font-size:30px;margin-top:2px}
+  .authors{margin-top:18px;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .pitch{margin-top:26px;color:#34342f;max-width:42ch}
+  .status{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-style:italic;color:var(--muted);font-size:17px}
+  .hero .cta{margin-top:22px}
+  .social{margin-top:34px;display:flex;gap:22px;align-items:center}
+  .social a{color:var(--muted);transition:color .2s ease,transform .2s ease;display:inline-flex}
+  .social a:hover{color:var(--accent);transform:translateY(-2px)}
+  .social svg{width:23px;height:23px;fill:currentColor}
+
+  /* SECTION ROMAN */
+  .roman{
+    max-width:680px;
+    margin:0 auto;
+    padding:8px 24px 104px;
+  }
+  .roman h2{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:500;
+    font-size:34px;
+    text-align:center;
+    margin-bottom:8px;
+  }
+  .roman h2::after{
+    content:"";
+    display:block;
+    width:54px;height:1px;
+    background:var(--accent);
+    margin:18px auto 0;
+  }
+  .synopsis{margin-top:30px;color:#34342f}
+  .synopsis + .synopsis{margin-top:18px}
+  .extrait{
+    margin:44px 0;
+    padding:30px 34px;
+    background:#fafaf7;
+    border-left:2px solid var(--accent);
+  }
+  .extrait figcaption{
+    font-family:"Cormorant Garamond",serif;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:15px;
+    color:var(--accent);
     margin-bottom:14px;
   }
-  h1{
-    font-family:"Cormorant Garamond",serif;
-    font-weight:600;
-    font-size:54px;
-    line-height:1.04;
-    letter-spacing:.01em;
-  }
-  .subtitle{
-    font-family:"Cormorant Garamond",serif;
-    font-weight:400;
+  .extrait blockquote{
     font-style:italic;
-    font-size:30px;
-    color:var(--ink);
-    margin-top:2px;
+    font-size:20px;
+    line-height:1.7;
+    color:#2c2c28;
   }
-  .authors{
-    margin-top:18px;
-    font-size:18px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    color:var(--muted);
-  }
-  .pitch{
-    margin-top:26px;
-    color:#34342f;
-    max-width:42ch;
-  }
-  .status{
-    margin-top:26px;
-    padding-top:22px;
-    border-top:1px solid var(--line);
+  .buy-line{
+    margin-top:36px;
+    text-align:center;
     font-style:italic;
     color:var(--muted);
     font-size:17px;
   }
-  .cta{
-    display:inline-block;
-    margin-top:22px;
-    background:var(--accent);
-    color:#fff;
-    text-decoration:none;
-    font-family:"EB Garamond",serif;
-    font-size:18px;
-    letter-spacing:.03em;
-    padding:13px 30px;
-    border-radius:2px;
-    transition:background .2s ease;
-  }
-  .cta:hover{background:var(--accent-dark)}
-  .social{
-    margin-top:34px;
-    display:flex;
-    gap:22px;
-    align-items:center;
-  }
-  .social a{
-    color:var(--muted);
-    transition:color .2s ease,transform .2s ease;
-    display:inline-flex;
-  }
-  .social a:hover{color:var(--accent);transform:translateY(-2px)}
-  .social svg{width:23px;height:23px;fill:currentColor}
+  .roman .cta{display:block;width:max-content;margin:20px auto 0}
+
   @media (max-width:760px){
-    body{padding:40px 22px}
-    main{grid-template-columns:1fr;gap:34px;text-align:center;max-width:440px}
+    .hero{padding:44px 22px}
+    .hero-inner{grid-template-columns:1fr;gap:34px;text-align:center;max-width:440px}
     .cover{max-width:240px;margin:0 auto}
     h1{font-size:42px}
     .subtitle{font-size:25px}
     .pitch{margin-left:auto;margin-right:auto}
     .social{justify-content:center}
+    .extrait{padding:24px 22px}
+    .extrait blockquote{font-size:18px}
   }
 </style>
 </head>
 <body>
-  <main>
-    <img class="cover" src="assets/cover.jpg" width="1000" height="1500"
-         alt="Couverture du roman L'Homme-Arbre ou Le Rêve de Saraca">
-    <section>
-      <p class="eyebrow">Roman d'anticipation</p>
-      <h1>L'Homme-Arbre</h1>
-      <p class="subtitle">ou Le Rêve de Saraca</p>
-      <p class="authors">Franck Tonnellier &amp; Léonard Vicari</p>
-      <p class="pitch">An 6019. L'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques. Une voix s'élève, celle de l'arbre-monde, témoin patient de toute l'histoire des hommes. Une épopée entre science-fiction et fantastique, un voyage initiatique sur notre véritable place sur cette planète.</p>
-      <p class="status">Prochainement dans votre librairie · Distribution Hachette</p>
-      <a class="cta" href="https://amzn.to/49hRZjS" target="_blank" rel="noopener">Acheter sur Amazon</a>
-      <nav class="social" aria-label="Réseaux sociaux">
-        <a href="https://www.instagram.com/lhomme_arbre/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.43.7.83.92 1.4.17.43.36 1.05.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.43.43-.83.7-1.4.92-.43.17-1.05.36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.43-.43-.7-.83-.92-1.4-.17-.43-.36-1.05-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.43-.43.83-.7 1.4-.92.43-.17 1.05-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.98c-3.15 0-3.5 0-4.77.07-.92.04-1.42.2-1.75.33-.44.17-.75.37-1.08.7-.33.33-.53.64-.7 1.08-.13.33-.29.83-.33 1.75C3.2 9.4 3.2 9.75 3.2 12s0 2.6.07 3.77c.04.92.2 1.42.33 1.75.17.44.37.75.7 1.08.33.33.64.53 1.08.7.33.13.83.29 1.75.33 1.27.06 1.62.07 4.77.07s3.5 0 4.77-.07c.92-.04 1.42-.2 1.75-.33.44-.17.75-.37 1.08-.7.33-.33.53-.64.7-1.08.13-.33.29-.83.33-1.75.06-1.27.07-1.62.07-3.77s0-2.6-.07-3.77c-.04-.92-.2-1.42-.33-1.75-.17-.44-.37-.75-.7-1.08-.33-.33-.64-.53-1.08-.7-.33-.13-.83-.29-1.75-.33-1.27-.06-1.62-.07-4.77-.07zm0 3.37a4.45 4.45 0 1 1 0 8.9 4.45 4.45 0 0 1 0-8.9zm0 7.34a2.89 2.89 0 1 0 0-5.78 2.89 2.89 0 0 0 0 5.78zm5.67-7.54a1.04 1.04 0 1 1-2.08 0 1.04 1.04 0 0 1 2.08 0z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@lhomme_arbre" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.1v12.4a2.45 2.45 0 0 1-2.45 2.36 2.46 2.46 0 0 1-.4-4.88V9.7a5.56 5.56 0 1 0 6.05 5.54V9.01a7.33 7.33 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.34-1.48z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@lhomme_arbre" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.12C19.55 3.9 12 3.9 12 3.9s-7.55 0-9.4.48A3 3 0 0 0 .5 6.5 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.12C4.45 20.1 12 20.1 12 20.1s7.55 0 9.4-.48a3 3 0 0 0 2.1-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.5zM9.6 15.6V8.4l6.2 3.6z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/romanlhommearbre/" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.87 11.85v-8.38H7.08V12h3.05V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.69.23 2.69.23v2.96h-1.52c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12z"/></svg>
-        </a>
-      </nav>
-    </section>
+  <header class="hero">
+    <div class="hero-inner">
+      <img class="cover" src="assets/cover.webp" width="700" height="1050"
+           fetchpriority="high" decoding="async"
+           alt="Couverture du roman L'Homme-Arbre ou Le Rêve de Saraca">
+      <section>
+        <p class="eyebrow">Roman d'anticipation</p>
+        <h1>L'Homme-Arbre</h1>
+        <p class="subtitle">ou Le Rêve de Saraca</p>
+        <p class="authors">Franck Tonnellier &amp; Léonard Vicari</p>
+        <p class="pitch">An 6019. L'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques. Une voix s'élève, celle de l'arbre-monde, témoin patient de toute l'histoire des hommes. Une épopée entre science-fiction et fantastique, un voyage initiatique sur notre véritable place sur cette planète.</p>
+        <p class="status">Prochainement dans votre librairie · Distribution Hachette</p>
+        <a class="cta" href="https://amzn.to/49hRZjS" target="_blank" rel="noopener">Acheter sur Amazon</a>
+        <nav class="social" aria-label="Réseaux sociaux">
+          <a href="https://www.instagram.com/lhomme_arbre/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.43.7.83.92 1.4.17.43.36 1.05.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.43.43-.83.7-1.4.92-.43.17-1.05.36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.43-.43-.7-.83-.92-1.4-.17-.43-.36-1.05-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.43-.43.83-.7 1.4-.92.43-.17 1.05-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.98c-3.15 0-3.5 0-4.77.07-.92.04-1.42.2-1.75.33-.44.17-.75.37-1.08.7-.33.33-.53.64-.7 1.08-.13.33-.29.83-.33 1.75C3.2 9.4 3.2 9.75 3.2 12s0 2.6.07 3.77c.04.92.2 1.42.33 1.75.17.44.37.75.7 1.08.33.33.64.53 1.08.7.33.13.83.29 1.75.33 1.27.06 1.62.07 4.77.07s3.5 0 4.77-.07c.92-.04 1.42-.2 1.75-.33.44-.17.75-.37 1.08-.7.33-.33.53-.64.7-1.08.13-.33.29-.83.33-1.75.06-1.27.07-1.62.07-3.77s0-2.6-.07-3.77c-.04-.92-.2-1.42-.33-1.75-.17-.44-.37-.75-.7-1.08-.33-.33-.64-.53-1.08-.7-.33-.13-.83-.29-1.75-.33-1.27-.06-1.62-.07-4.77-.07zm0 3.37a4.45 4.45 0 1 1 0 8.9 4.45 4.45 0 0 1 0-8.9zm0 7.34a2.89 2.89 0 1 0 0-5.78 2.89 2.89 0 0 0 0 5.78zm5.67-7.54a1.04 1.04 0 1 1-2.08 0 1.04 1.04 0 0 1 2.08 0z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@lhomme_arbre" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.1v12.4a2.45 2.45 0 0 1-2.45 2.36 2.46 2.46 0 0 1-.4-4.88V9.7a5.56 5.56 0 1 0 6.05 5.54V9.01a7.33 7.33 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.34-1.48z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@lhomme_arbre" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.12C19.55 3.9 12 3.9 12 3.9s-7.55 0-9.4.48A3 3 0 0 0 .5 6.5 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.12C4.45 20.1 12 20.1 12 20.1s7.55 0 9.4-.48a3 3 0 0 0 2.1-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.5zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/romanlhommearbre/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.87 11.85v-8.38H7.08V12h3.05V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.69.23 2.69.23v2.96h-1.52c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12z"/></svg>
+          </a>
+        </nav>
+      </section>
+    </div>
+  </header>
+
+  <main class="roman">
+    <h2>Le roman</h2>
+    <p class="synopsis">Une épopée entre science-fiction et fantastique, dans la lignée des grands romans philosophiques. En l'an 6019, l'humanité s'est enfermée dans des mégalopoles technocratiques toujours plus vastes et repliées sur elles-mêmes. Sommes-nous condamnés à cette fuite en avant, ou existe-t-il un autre chemin ? Quelle est notre véritable place sur cette planète ?</p>
+    <p class="synopsis">Porté par la voix de l'arbre-monde, témoin patient de toute l'histoire des hommes, <em>L'Homme-Arbre ou Le Rêve de Saraca</em> est un voyage initiatique qui interroge notre rapport au vivant et au temps, et invite à ouvrir l'esprit.</p>
+
+    <figure class="extrait">
+      <figcaption>Yggdrasil</figcaption>
+      <blockquote>« Dans mon voyage, j'ai vu d'impitoyables duels, et la guerre, la guerre toujours plus insensée, la guerre menée par les hommes cupides. […] Aujourd'hui, en cette année 6019 de votre calendrier, les hommes sont au fin fond de l'impasse, alors mon verbe aujourd'hui peut être compris. […] Alors j'ai vu soixante-dix-huit Mégalopoles se dresser sur le monde et, chacune d'elles, s'est abattue sur la terre pour mettre un point final à vos espoirs. »</blockquote>
+    </figure>
+
+    <p class="buy-line">Disponible en version numérique et en broché (210 pages).<br>Prochainement dans votre librairie · Distribution Hachette</p>
+    <a class="cta" href="https://amzn.to/49hRZjS" target="_blank" rel="noopener">Acheter sur Amazon</a>
   </main>
 </body>
 </html>
