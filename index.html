@@ -174,6 +174,13 @@
   }
   .roman .cta{display:block;width:max-content;margin:20px auto 0}
 
+  /* AUTEUR */
+  .auteur{margin-top:66px}
+  .auteur-inner{display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:start;margin-top:30px}
+  .auteur-photo{width:100%;height:auto;border:1px solid var(--line);border-radius:3px;box-shadow:0 14px 34px -20px rgba(0,0,0,.45);display:block}
+  .auteur-name{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:500;margin-bottom:10px}
+  .auteur-bio{color:#34342f;font-size:17px}
+
   @media (max-width:760px){
     .hero{padding:44px 22px}
     .hero-inner{grid-template-columns:1fr;gap:34px;text-align:center;max-width:440px}
@@ -184,6 +191,9 @@
     .social{justify-content:center}
     .extrait{padding:24px 22px}
     .extrait blockquote{font-size:18px}
+    .auteur-inner{grid-template-columns:1fr;gap:18px}
+    .auteur-photo{max-width:180px;margin:0 auto}
+    .auteur-name,.auteur-bio{text-align:center}
   }
 </style>
 </head>
@@ -198,7 +208,7 @@
         <h1>L'Homme-Arbre</h1>
         <p class="subtitle">ou Le Rêve de Saraca</p>
         <p class="authors">Franck Tonnellier &amp; Léonard Vicari</p>
-        <p class="pitch">An 6019. L'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques. Une voix s'élève, celle de l'arbre-monde, témoin patient de toute l'histoire des hommes. Une épopée entre science-fiction et fantastique, un voyage initiatique sur notre véritable place sur cette planète.</p>
+        <p class="pitch">An 6099. L'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques. Une voix s'élève, celle de l'arbre-monde, témoin patient de toute l'histoire des hommes. Une épopée entre science-fiction et fantastique, un voyage initiatique sur notre véritable place sur cette planète.</p>
         <p class="status">Disponible dès maintenant · en broché et en numérique</p>
         <a class="cta" href="https://librairie.edilivre.com/science-fiction/37232-l-homme-arbre-ou-le-reve-de-saraca-9782414826544.html" target="_blank" rel="noopener">Commander le livre</a>
         <nav class="social" aria-label="Réseaux sociaux">
@@ -221,13 +231,25 @@
 
   <main class="roman">
     <h2>Le roman</h2>
-    <p class="synopsis">Une épopée entre conte mythologique et science-fiction. En l'an 6019, la civilisation s'est repliée sur elle-même, au cœur de soixante-dix-huit mégalopoles toujours plus immenses et matérialistes. Sommes-nous voués à rester enfermés dans nos mégalopoles autocentrées, ou existe-t-il un autre chemin pour sortir du Grand Labyrinthe ?</p>
+    <p class="synopsis">Une épopée entre conte mythologique et science-fiction. En l'an 6099, la civilisation s'est repliée sur elle-même, au cœur de soixante-dix-huit mégalopoles toujours plus immenses et matérialistes. Sommes-nous voués à rester enfermés dans nos mégalopoles autocentrées, ou existe-t-il un autre chemin pour sortir du Grand Labyrinthe ?</p>
     <p class="synopsis">Léo, dernier descendant des Bateleurs, fils d'une humaine et d'un Enyde, va tenter de réveiller l'âme du monde et celle des peuples pour mettre un terme à la dictature technocratique des Princes. Portée par la voix de l'arbre-monde, <em>L'Homme-Arbre ou Le Rêve de Saraca</em> explore des thématiques sociales, écologiques, politiques et psychiques, et invite à ouvrir l'esprit.</p>
 
     <figure class="extrait">
       <figcaption>Yggdrasil</figcaption>
-      <blockquote>« Dans mon voyage, j'ai vu d'impitoyables duels, et la guerre, la guerre toujours plus insensée, la guerre menée par les hommes cupides. […] Aujourd'hui, en cette année 6019 de votre calendrier, les hommes sont au fin fond de l'impasse, alors mon verbe aujourd'hui peut être compris. […] Alors j'ai vu soixante-dix-huit Mégalopoles se dresser sur le monde et, chacune d'elles, s'est abattue sur la terre pour mettre un point final à vos espoirs. »</blockquote>
+      <blockquote>« Dans mon voyage, j'ai vu d'impitoyables duels, et la guerre, la guerre toujours plus insensée, la guerre menée par les hommes cupides. […] Aujourd'hui, en cette année 6099 de votre calendrier, les hommes sont au fin fond de l'impasse, alors mon verbe aujourd'hui peut être compris. […] Alors j'ai vu soixante-dix-huit Mégalopoles se dresser sur le monde et, chacune d'elles, s'est abattue sur la terre pour mettre un point final à vos espoirs. »</blockquote>
     </figure>
+
+    <section class="auteur">
+      <h2>L'auteur</h2>
+      <div class="auteur-inner">
+        <img class="auteur-photo" src="assets/franck-tonnellier.webp" width="325" height="458"
+             loading="lazy" decoding="async" alt="Portrait de Franck Tonnellier">
+        <div>
+          <p class="auteur-name">Franck Tonnellier</p>
+          <p class="auteur-bio">Né à Paris en 1970, Franck Tonnellier est d'abord comédien. En 2001, il s'installe en Guyane française et co-réalise le documentaire <em>« Antecume-Pata, au cœur du voyage »</em>, partageant six mois durant la vie des tribus Wayana et Aluku, à plus de 300 kilomètres au fond de la forêt amazonienne. Inspiré par <em>« La Mythologie des arbres »</em> de Jacques Brosse et <em>« La Pensée sauvage »</em> de Claude Lévi-Strauss, il achève l'écriture d'un long métrage qui deviendra, vingt-neuf ans plus tard et avec la complicité de son ami et co-auteur Léonard Vicari, le roman d'anticipation <em>L'Homme-Arbre ou Le Rêve de Saraca</em>.</p>
+        </div>
+      </div>
+    </section>
 
     <p class="buy-line">Disponible dès maintenant, en broché (270 pages, 20,50 €) et en numérique (8,99 €).</p>
     <a class="cta" href="https://librairie.edilivre.com/science-fiction/37232-l-homme-arbre-ou-le-reve-de-saraca-9782414826544.html" target="_blank" rel="noopener">Commander le livre</a>
