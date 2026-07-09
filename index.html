@@ -174,6 +174,10 @@
   }
   .retailers{margin-top:22px;text-align:center;font-size:15px;color:var(--muted);font-style:italic}
   .retailers span{font-style:normal;color:#4a4a44}
+  .retailer-logos{margin-top:14px;display:flex;justify-content:center;align-items:center;gap:24px}
+  .retailer-logos a{display:inline-flex;opacity:.92;transition:opacity .2s ease,transform .2s ease}
+  .retailer-logos a:hover{opacity:1;transform:translateY(-2px)}
+  .retailer-logos img{width:44px;height:44px;border-radius:8px;border:1px solid var(--line)}
   .babelio{margin-top:10px;text-align:center;font-size:16px}
   .babelio a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
   .babelio a:hover{color:var(--accent-dark)}
@@ -250,7 +254,7 @@
     <section class="auteur">
       <h2>Les auteurs</h2>
       <div class="auteur-inner">
-        <img class="auteur-photo" src="assets/franck-tonnellier.webp" width="325" height="458"
+        <img class="auteur-photo" src="assets/franck-tonnellier.webp?v=2" width="325" height="458"
              loading="lazy" decoding="async" alt="Portrait de Franck Tonnellier">
         <div>
           <p class="auteur-name">Franck Tonnellier</p>
@@ -269,7 +273,19 @@
 
     <p class="buy-line">Disponible dès maintenant, en broché (270 pages, 20,50 €) et en numérique (8,99 €).</p>
     <a class="cta" href="https://librairie.edilivre.com/science-fiction/37232-l-homme-arbre-ou-le-reve-de-saraca-9782414826544.html" target="_blank" rel="noopener">Commander le livre</a>
-    <p class="retailers">Bientôt aussi chez <span>FNAC</span> · <span>Amazon</span> · <span>Cultura</span> · <span>Recyclivre</span> · <span>Bourse aux Livres</span></p>
+    <p class="retailers">Aussi disponible chez</p>
+    <nav class="retailer-logos" aria-label="Revendeurs">
+      <a href="https://www.fnac.com/livre-numerique/a23332676/Franck-Tonnellier-L-homme-arbre-ou-le-reve-de-Saraca#FORMAT=ebook%20(ePub)" target="_blank" rel="noopener" aria-label="Commander sur la FNAC">
+        <img src="assets/logo-fnac.jpg" width="62" height="62" loading="lazy" decoding="async" alt="FNAC">
+      </a>
+      <a href="https://www.amazon.fr/dp/B0H7SRNBMM" target="_blank" rel="noopener" aria-label="Commander sur Amazon">
+        <img src="assets/logo-amazon.jpg" width="62" height="62" loading="lazy" decoding="async" alt="Amazon">
+      </a>
+      <a href="https://www.cultura.com/p-l-homme-arbre-ou-le-reve-de-saraca-13252662.html" target="_blank" rel="noopener" aria-label="Commander sur Cultura">
+        <img src="assets/logo-cultura.jpg" width="62" height="62" loading="lazy" decoding="async" alt="Cultura">
+      </a>
+    </nav>
+    <p class="retailers">Bientôt aussi chez <span>Recyclivre</span> · <span>Bourse aux Livres</span></p>
     <p class="babelio"><a href="https://www.babelio.com/livres/Tonnellier-Lhomme-arbre-ou-le-reve-de-Saraca/2067112" target="_blank" rel="noopener">Fiche &amp; avis des lecteurs sur Babelio</a></p>
   </main>
 </body>
