@@ -50,6 +50,7 @@
   ]
 }
 </script>
+<script>if(/[?&]librairie(\b|=|&|$)/.test(location.search))document.documentElement.classList.add("en-librairie")</script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -245,6 +246,28 @@
   .vstep.next{right:16px;top:calc(50% - 23px)}
   .vclose:hover,.vstep:hover{background:rgba(255,255,255,.25)}
 
+  /* MODE LIBRAIRIE (QR code de la PLV : ?librairie) */
+  .shop-note{display:none}
+  .en-librairie .cta,.en-librairie .hero-retailers,.en-librairie .status,.en-librairie .buy-line,
+  .en-librairie .retailers,.en-librairie .retailer-logos{display:none}
+  .en-librairie .shop-note{display:block}
+  .shop-note{margin-top:26px;padding:20px 22px;border:1px solid var(--accent);border-radius:4px;background:#f6f8f4}
+  .shop-kicker{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--accent)}
+  .shop-title{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:27px;line-height:1.15;margin-top:6px}
+  .shop-text{color:#34342f;font-size:17px;margin-top:8px}
+  .shop-btn{margin-top:14px;background:var(--accent);color:#fff;border:0;border-radius:2px;padding:12px 22px;font-family:"EB Garamond",serif;font-size:17px;cursor:pointer}
+  .shop-btn:hover{background:var(--accent-dark)}
+  .roman .shop-note{max-width:520px;margin:36px auto 0;text-align:center}
+  .ref-modal{margin:auto;border:0;border-radius:10px;padding:34px 28px 26px;max-width:420px;width:calc(100% - 32px);text-align:center;background:#fff;color:var(--ink)}
+  .ref-modal::backdrop{background:rgba(12,12,10,.7)}
+  .ref-modal .ref-k{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--accent)}
+  .ref-modal .ref-t{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:28px;line-height:1.1;margin-top:10px}
+  .ref-modal .ref-a{color:var(--muted);font-size:16px;margin-top:6px}
+  .ref-modal .ean{width:100%;max-width:320px;height:auto;margin:22px auto 6px;display:block}
+  .ref-modal .ref-isbn{font-size:22px;letter-spacing:.06em;font-weight:600}
+  .ref-modal .ref-d{color:#34342f;font-size:16px;margin-top:6px}
+  .ref-modal .ref-close{margin-top:20px;background:none;border:1px solid var(--line);border-radius:2px;padding:9px 20px;font-family:"EB Garamond",serif;font-size:16px;cursor:pointer}
+
   @media (max-width:760px){
     .hero{padding:44px 22px}
     .hero-inner{grid-template-columns:1fr;gap:34px;text-align:center;max-width:440px}
@@ -280,6 +303,12 @@
         <p class="authors">Franck Tonnellier &amp; Léonard Vicari</p>
         <p class="pitch">An 6099. L'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques. Une voix s'élève, celle de l'arbre-monde, témoin patient de toute l'histoire des hommes. Une épopée entre science-fiction et fantastique, un voyage initiatique sur notre véritable place sur cette planète.</p>
         <p class="status">Disponible dès maintenant · en broché et en numérique</p>
+        <div class="shop-note">
+          <p class="shop-kicker">Vous êtes en librairie</p>
+          <p class="shop-title">Commandez-le ici, chez votre libraire</p>
+          <p class="shop-text">Montrez cet écran au libraire : il le commande en quelques secondes.</p>
+          <button class="shop-btn" type="button">Afficher la référence du livre</button>
+        </div>
         <a class="cta" href="https://librairie.edilivre.com/science-fiction/37232-l-homme-arbre-ou-le-reve-de-saraca-9782414826544.html" target="_blank" rel="noopener">Commander le livre</a>
         <div class="hero-retailers">
           <span>Aussi chez</span>
@@ -408,6 +437,12 @@
       </div>
     </section>
 
+    <div class="shop-note">
+      <p class="shop-kicker">Vous êtes en librairie</p>
+      <p class="shop-title">Commandez-le ici, chez votre libraire</p>
+      <p class="shop-text">Montrez cet écran au libraire : il le commande en quelques secondes.</p>
+      <button class="shop-btn" type="button">Afficher la référence du livre</button>
+    </div>
     <p class="buy-line">Disponible dès maintenant, en broché (270 pages, 20,50 €) et en numérique (8,99 €).</p>
     <a class="cta" href="https://librairie.edilivre.com/science-fiction/37232-l-homme-arbre-ou-le-reve-de-saraca-9782414826544.html" target="_blank" rel="noopener">Commander le livre</a>
     <p class="retailers">Aussi disponible chez</p>
@@ -424,6 +459,16 @@
     </nav>
     <p class="retailers">Bientôt aussi chez <span>Recyclivre</span> · <span>Bourse aux Livres</span></p>
     <p class="babelio"><a href="https://www.babelio.com/livres/Tonnellier-Lhomme-arbre-ou-le-reve-de-Saraca/2067112" target="_blank" rel="noopener">Fiche &amp; avis des lecteurs sur Babelio</a></p>
+
+    <dialog class="ref-modal" aria-label="Référence du livre pour le libraire">
+      <p class="ref-k">À montrer au libraire</p>
+      <p class="ref-t">L'Homme-Arbre ou Le Rêve de Saraca</p>
+      <p class="ref-a">Franck Tonnellier &amp; Léonard Vicari</p>
+      <svg class="ean" viewBox="0 0 117 66" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Code-barres EAN-13 9782414826544"><rect width="117" height="76" fill="#fff"/><g fill="#000"><rect x="11" y="0" width="1" height="66"/><rect x="13" y="0" width="1" height="66"/><rect x="15" y="0" width="3" height="60"/><rect x="19" y="0" width="2" height="60"/><rect x="24" y="0" width="1" height="60"/><rect x="27" y="0" width="1" height="60"/><rect x="30" y="0" width="2" height="60"/><rect x="33" y="0" width="2" height="60"/><rect x="36" y="0" width="1" height="60"/><rect x="40" y="0" width="2" height="60"/><rect x="43" y="0" width="2" height="60"/><rect x="47" y="0" width="2" height="60"/><rect x="50" y="0" width="1" height="60"/><rect x="54" y="0" width="2" height="60"/><rect x="57" y="0" width="1" height="66"/><rect x="59" y="0" width="1" height="66"/><rect x="61" y="0" width="1" height="60"/><rect x="64" y="0" width="1" height="60"/><rect x="68" y="0" width="2" height="60"/><rect x="71" y="0" width="2" height="60"/><rect x="75" y="0" width="1" height="60"/><rect x="77" y="0" width="1" height="60"/><rect x="82" y="0" width="1" height="60"/><rect x="85" y="0" width="3" height="60"/><rect x="89" y="0" width="1" height="60"/><rect x="91" y="0" width="3" height="60"/><rect x="96" y="0" width="1" height="60"/><rect x="98" y="0" width="3" height="60"/><rect x="103" y="0" width="1" height="66"/><rect x="105" y="0" width="1" height="66"/></g></svg>
+      <p class="ref-isbn">ISBN 9782414826544</p>
+      <p class="ref-d">Edilivre · distribution Hachette Livre<br>Broché, 270 pages, 20,50 €</p>
+      <button class="ref-close" type="button">Fermer</button>
+    </dialog>
   </main>
 
 <script>
@@ -453,6 +498,15 @@
     if (e.key === 'ArrowLeft') show(cur - 1);
   });
   modal.addEventListener('close', () => { frame.src = ''; cards[cur].focus(); });
+})();
+</script>
+
+<script>
+(() => {
+  const m = document.querySelector('.ref-modal');
+  document.querySelectorAll('.shop-btn').forEach(b => b.addEventListener('click', () => m.showModal()));
+  m.querySelector('.ref-close').addEventListener('click', () => m.close());
+  m.addEventListener('click', e => { if (e.target === m) m.close(); });
 })();
 </script>
 </body>
