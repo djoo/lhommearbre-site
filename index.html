@@ -66,6 +66,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
+  body{overflow-x:hidden}
   body{
     background:#fff;
     color:var(--ink);
@@ -196,6 +197,54 @@
   .auteur-bio a:hover{color:var(--accent-dark)}
   .auteur-inner + .auteur-inner{margin-top:44px}
 
+  /* REVENDEURS HERO */
+  .hero-retailers{margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .hero-retailers span{font-style:italic;color:var(--muted);font-size:15px}
+  .hero-retailers a{display:inline-flex;transition:transform .2s ease}
+  .hero-retailers a:hover{transform:translateY(-2px)}
+  .hero-retailers img{width:40px;height:40px;border-radius:7px;border:1px solid var(--line);display:block}
+
+  /* VIDEOS */
+  .videos{width:100vw;margin-left:calc(50% - 50vw);margin-top:72px;margin-bottom:8px}
+  .videos-intro{text-align:center;color:var(--muted);font-style:italic;font-size:17px;margin-top:22px;padding:0 24px}
+  .vrail-wrap{position:relative;margin-top:26px}
+  .vrail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 max(24px,calc(50vw - 560px));
+    padding:6px max(24px,calc(50vw - 560px)) 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .vrail::-webkit-scrollbar{display:none}
+  .vcard{flex:0 0 196px;aspect-ratio:9/16;position:relative;border:0;padding:0;border-radius:10px;overflow:hidden;
+    scroll-snap-align:start;cursor:pointer;background:#16150f;box-shadow:0 16px 34px -20px rgba(0,0,0,.55);text-align:left}
+  .vcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .vcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.78) 100%)}
+  .vcard:hover img,.vcard:focus-visible img{transform:scale(1.05)}
+  .vcard:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .vmeta{position:absolute;left:14px;right:14px;bottom:14px;z-index:1;display:flex;flex-direction:column;gap:4px;color:#fff}
+  .vnum{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.2em;font-size:13px;opacity:.85}
+  .vtitle{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:19px;line-height:1.15}
+  .vplay{position:absolute;z-index:1;top:50%;left:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;
+    background:rgba(255,255,255,.88);box-shadow:0 6px 20px rgba(0,0,0,.35);transition:transform .2s ease}
+  .vplay::before{content:"";position:absolute;left:21px;top:16px;border-style:solid;border-width:11px 0 11px 17px;border-color:transparent transparent transparent var(--accent)}
+  .vcard:hover .vplay{transform:scale(1.08)}
+  .vnav{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;
+    color:var(--ink);font-size:24px;line-height:1;cursor:pointer;z-index:2;box-shadow:0 6px 18px -8px rgba(0,0,0,.35)}
+  .vnav:hover{color:var(--accent)}
+  .videos-more{display:flex;align-items:center;justify-content:center;gap:22px;font-size:16px;margin-top:4px}
+  .videos-more a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+
+  /* LECTEUR */
+  .vmodal{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;overflow:hidden}
+  .vmodal::backdrop{background:rgba(12,12,10,.88)}
+  .vmodal[open]{display:flex;align-items:center;justify-content:center}
+  .vplayer{position:relative;height:min(86vh,calc((100vw - 40px) * 16 / 9));aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#000}
+  .vplayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vcap{position:absolute;left:0;right:0;top:calc(50% + min(43vh,calc((100vw - 40px) * 8 / 9)) + 10px);text-align:center;color:#f3f1ea;
+    font-family:"Cormorant Garamond",serif;font-size:19px}
+  .vclose,.vstep{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:50%;cursor:pointer;
+    width:46px;height:46px;font-size:26px;line-height:1}
+  .vclose{top:16px;right:16px}
+  .vstep.prev{left:16px;top:calc(50% - 23px)}
+  .vstep.next{right:16px;top:calc(50% - 23px)}
+  .vclose:hover,.vstep:hover{background:rgba(255,255,255,.25)}
+
   @media (max-width:760px){
     .hero{padding:44px 22px}
     .hero-inner{grid-template-columns:1fr;gap:34px;text-align:center;max-width:440px}
@@ -210,6 +259,10 @@
     .auteur-inner{grid-template-columns:1fr;gap:18px}
     .auteur-photo{max-width:180px;margin:0 auto}
     .auteur-name,.auteur-bio{text-align:center}
+    .hero-retailers{justify-content:center}
+    .vcard{flex-basis:62vw}
+    .vnav{display:none}
+    .vstep{display:none}
   }
 </style>
 </head>
@@ -228,6 +281,12 @@
         <p class="pitch">An 6099. L'humanité s'est enfermée dans soixante-dix-huit mégalopoles technocratiques. Une voix s'élève, celle de l'arbre-monde, témoin patient de toute l'histoire des hommes. Une épopée entre science-fiction et fantastique, un voyage initiatique sur notre véritable place sur cette planète.</p>
         <p class="status">Disponible dès maintenant · en broché et en numérique</p>
         <a class="cta" href="https://librairie.edilivre.com/science-fiction/37232-l-homme-arbre-ou-le-reve-de-saraca-9782414826544.html" target="_blank" rel="noopener">Commander le livre</a>
+        <div class="hero-retailers">
+          <span>Aussi chez</span>
+          <a href="https://www.fnac.com/livre-numerique/a23332676/Franck-Tonnellier-L-homme-arbre-ou-le-reve-de-Saraca#FORMAT=ebook%20(ePub)" target="_blank" rel="noopener" aria-label="Commander sur la FNAC"><img src="assets/logo-fnac.jpg" width="40" height="40" decoding="async" alt="FNAC"></a>
+          <a href="https://www.amazon.fr/dp/B0H7SRNBMM" target="_blank" rel="noopener" aria-label="Commander sur Amazon"><img src="assets/logo-amazon.jpg" width="40" height="40" decoding="async" alt="Amazon"></a>
+          <a href="https://www.cultura.com/p-l-homme-arbre-ou-le-reve-de-saraca-13252662.html" target="_blank" rel="noopener" aria-label="Commander sur Cultura"><img src="assets/logo-cultura.jpg" width="40" height="40" decoding="async" alt="Cultura"></a>
+        </div>
         <nav class="social" aria-label="Réseaux sociaux">
           <a href="https://www.instagram.com/lhomme_arbre/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.43.7.83.92 1.4.17.43.36 1.05.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.43.43-.83.7-1.4.92-.43.17-1.05.36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.43-.43-.7-.83-.92-1.4-.17-.43-.36-1.05-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.43-.43.83-.7 1.4-.92.43-.17 1.05-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.98c-3.15 0-3.5 0-4.77.07-.92.04-1.42.2-1.75.33-.44.17-.75.37-1.08.7-.33.33-.53.64-.7 1.08-.13.33-.29.83-.33 1.75C3.2 9.4 3.2 9.75 3.2 12s0 2.6.07 3.77c.04.92.2 1.42.33 1.75.17.44.37.75.7 1.08.33.33.64.53 1.08.7.33.13.83.29 1.75.33 1.27.06 1.62.07 4.77.07s3.5 0 4.77-.07c.92-.04 1.42-.2 1.75-.33.44-.17.75-.37 1.08-.7.33-.33.53-.64.7-1.08.13-.33.29-.83.33-1.75.06-1.27.07-1.62.07-3.77s0-2.6-.07-3.77c-.04-.92-.2-1.42-.33-1.75-.17-.44-.37-.75-.7-1.08-.33-.33-.64-.53-1.08-.7-.33-.13-.83-.29-1.75-.33-1.27-.06-1.62-.07-4.77-.07zm0 3.37a4.45 4.45 0 1 1 0 8.9 4.45 4.45 0 0 1 0-8.9zm0 7.34a2.89 2.89 0 1 0 0-5.78 2.89 2.89 0 0 0 0 5.78zm5.67-7.54a1.04 1.04 0 1 1-2.08 0 1.04 1.04 0 0 1 2.08 0z"/></svg>
@@ -255,6 +314,79 @@
       <figcaption>Yggdrasil</figcaption>
       <blockquote>« Dans mon voyage, j'ai vu d'impitoyables duels, et la guerre, la guerre toujours plus insensée, la guerre menée par les hommes cupides. […] Aujourd'hui, en cette année 6099 de votre calendrier, les hommes sont au fin fond de l'impasse, alors mon verbe aujourd'hui peut être compris. […] Alors j'ai vu soixante-dix-huit Mégalopoles se dresser sur le monde et, chacune d'elles, s'est abattue sur la terre pour mettre un point final à vos espoirs. »</blockquote>
     </figure>
+
+    <section class="videos" aria-labelledby="videos-title">
+      <h2 id="videos-title">Le roman en images</h2>
+      <p class="videos-intro">Des extraits vidéo pour entrer dans l'univers du livre.</p>
+      <div class="vrail-wrap">
+        <div class="vrail" role="list">
+        <button class="vcard" type="button" role="listitem" data-yt="1tu8bEiDv7w" data-title="Survol" aria-label="Regarder l'extrait 1 : Survol">
+          <img src="assets/videos/01.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 01</span><span class="vtitle">Survol</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="Noi5PetH4Pk" data-title="Jagadis face au Prince" aria-label="Regarder l'extrait 2 : Jagadis face au Prince">
+          <img src="assets/videos/02.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 02</span><span class="vtitle">Jagadis face au Prince</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="IgyQWgKr4JM" data-title="Jagadis, l&#x27;ascenseur, la chute" aria-label="Regarder l'extrait 3 : Jagadis, l&#x27;ascenseur, la chute">
+          <img src="assets/videos/03.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 03</span><span class="vtitle">Jagadis, l&#x27;ascenseur, la chute</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="DVzdA4GCX_s" data-title="Le mur s&#x27;ouvre" aria-label="Regarder l'extrait 4 : Le mur s&#x27;ouvre">
+          <img src="assets/videos/04.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 04</span><span class="vtitle">Le mur s&#x27;ouvre</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="Q01pBot7XxY" data-title="Pluie de billets sur Jagadis" aria-label="Regarder l'extrait 5 : Pluie de billets sur Jagadis">
+          <img src="assets/videos/05.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 05</span><span class="vtitle">Pluie de billets sur Jagadis</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="3M3kX-6DTzk" data-title="Le promontoire" aria-label="Regarder l'extrait 6 : Le promontoire">
+          <img src="assets/videos/06.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 06</span><span class="vtitle">Le promontoire</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="UP0RbcZMU04" data-title="La mort de Bernardin" aria-label="Regarder l'extrait 7 : La mort de Bernardin">
+          <img src="assets/videos/07.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 07</span><span class="vtitle">La mort de Bernardin</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="EFfG2xnqRMc" data-title="Saraca, Léo : le départ" aria-label="Regarder l'extrait 8 : Saraca, Léo : le départ">
+          <img src="assets/videos/08.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 08</span><span class="vtitle">Saraca, Léo : le départ</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="ywbOKjcIslQ" data-title="Rencontre Niflelle Yggdrasill (1)" aria-label="Regarder l'extrait 9 : Rencontre Niflelle Yggdrasill (1)">
+          <img src="assets/videos/09.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 09</span><span class="vtitle">Rencontre Niflelle Yggdrasill (1)</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="BdIATH69ujM" data-title="Énostia Prométéa" aria-label="Regarder l'extrait 10 : Énostia Prométéa">
+          <img src="assets/videos/10.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 10</span><span class="vtitle">Énostia Prométéa</span></span>
+        </button>
+        <button class="vcard" type="button" role="listitem" data-yt="hI9lhWr9FKI" data-title="Rencontre Niflelle Yggdrasill (2)" aria-label="Regarder l'extrait 11 : Rencontre Niflelle Yggdrasill (2)">
+          <img src="assets/videos/11.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+          <span class="vplay" aria-hidden="true"></span>
+          <span class="vmeta"><span class="vnum">EXTRAIT 11</span><span class="vtitle">Rencontre Niflelle Yggdrasill (2)</span></span>
+        </button>
+        </div>
+      </div>
+      <div class="videos-more"><button class="vnav prev" type="button" aria-label="Extraits précédents">‹</button><a href="https://www.youtube.com/playlist?list=PLRSDhS3ldDM8" target="_blank" rel="noopener">Toute la série sur YouTube</a><button class="vnav next" type="button" aria-label="Extraits suivants">›</button></div>
+    </section>
+
+    <dialog class="vmodal" aria-label="Lecteur vidéo">
+      <div class="vplayer"><iframe title="Extrait vidéo" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <p class="vcap"></p>
+      <button class="vclose" type="button" aria-label="Fermer">×</button>
+      <button class="vstep prev" type="button" aria-label="Extrait précédent">‹</button>
+      <button class="vstep next" type="button" aria-label="Extrait suivant">›</button>
+    </dialog>
 
     <section class="auteur">
       <h2>Les auteurs</h2>
@@ -293,5 +425,35 @@
     <p class="retailers">Bientôt aussi chez <span>Recyclivre</span> · <span>Bourse aux Livres</span></p>
     <p class="babelio"><a href="https://www.babelio.com/livres/Tonnellier-Lhomme-arbre-ou-le-reve-de-Saraca/2067112" target="_blank" rel="noopener">Fiche &amp; avis des lecteurs sur Babelio</a></p>
   </main>
+
+<script>
+(() => {
+  const rail = document.querySelector('.vrail');
+  const cards = [...document.querySelectorAll('.vcard')];
+  const modal = document.querySelector('.vmodal');
+  const frame = modal.querySelector('iframe');
+  const cap = modal.querySelector('.vcap');
+  let cur = 0;
+  const step = () => rail.clientWidth * 0.8;
+  document.querySelector('.vnav.prev').addEventListener('click', () => rail.scrollBy({left: -step(), behavior: 'smooth'}));
+  document.querySelector('.vnav.next').addEventListener('click', () => rail.scrollBy({left: step(), behavior: 'smooth'}));
+  const show = i => {
+    cur = (i + cards.length) % cards.length;
+    const c = cards[cur];
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.yt + '?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+    cap.textContent = 'Extrait ' + (cur + 1) + ' · ' + c.dataset.title;
+  };
+  cards.forEach((c, i) => c.addEventListener('click', () => { show(i); modal.showModal(); }));
+  modal.querySelector('.vclose').addEventListener('click', () => modal.close());
+  modal.querySelector('.vstep.prev').addEventListener('click', () => show(cur - 1));
+  modal.querySelector('.vstep.next').addEventListener('click', () => show(cur + 1));
+  modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+  modal.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') show(cur + 1);
+    if (e.key === 'ArrowLeft') show(cur - 1);
+  });
+  modal.addEventListener('close', () => { frame.src = ''; cards[cur].focus(); });
+})();
+</script>
 </body>
 </html>
